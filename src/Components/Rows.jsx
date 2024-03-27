@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
 import Card from "./SubComponents/Card";
+import "./Rows.css";
 
 function Rows(props) {
+  const imgURL = "https://image.tmdb.org/t/p/original";
   useEffect(() => {
     const data = async () => {
       const url = import.meta.env.REACT_APP_URL;
@@ -17,9 +19,12 @@ function Rows(props) {
   return (
     <>
       <h1 className="rows-title">{props.title}</h1>
-      {props.arr.map((items, index) => (
-        <Card key={index} img={items.poster_path} />
-      ))}
+
+      <div className="row-cards">
+        {props.arr.map((items, index) => (
+          <Card key={index} img={`${imgURL}/${items.poster_path}`} />
+        ))}
+      </div>
     </>
   );
 }

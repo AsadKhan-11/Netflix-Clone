@@ -1,0 +1,6 @@
+.row-cards {
+  display: flex;
+  height: 150px;
+  gap: 20px;
+  overflow-x: scroll;
+}
