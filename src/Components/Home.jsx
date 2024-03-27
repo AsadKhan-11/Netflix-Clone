@@ -45,11 +45,14 @@ function Home() {
   return (
     <>
       <section className="home">
-        <img className="home-img" src={`${imgURL}/${popular[0].poster_path}`} />
-        <Rows title="Popular on Netflix" arr={popular} />
-        <Rows title="TV Shows" arr={topMovies} />
-        <Rows title="Now Playing" arr={nowPlaying} />
-        <Rows title="Upcoming" arr={upcoming} />
+        <img className="home-img" src={`${imgURL}/${popular[3].poster_path}`} />
+
+        <div className="rows-container">
+          <Rows title="Popular on Netflix" arr={popular} />
+          <Rows title="TV Shows" arr={topMovies} />
+          <Rows title="Now Playing" arr={nowPlaying} />
+          <Rows title="Upcoming" arr={upcoming} />
+        </div>
       </section>
     </>
   );

@@ -18,17 +18,19 @@ function Rows(props) {
 
   return (
     <>
-      <h1 className="rows-title">{props.title}</h1>
+      <section className="rows-section">
+        <h1 className="rows-title">{props.title}</h1>
 
-      <div className="row-cards">
-        {props.arr.map((items, index) => (
-          <Card
-            key={index}
-            img={`${imgURL}/${items.poster_path}`}
-            title={items.title}
-          />
-        ))}
-      </div>
+        <div className="row-cards">
+          {props.arr.map((items, index) => (
+            <Card
+              key={index}
+              img={`${imgURL}/${items.poster_path}`}
+              title={items.title}
+            />
+          ))}
+        </div>
+      </section>
     </>
   );
 }

@@ -1,19 +1,15 @@
 .card-container {
-  height: 250px;
+  height: 160px;
   width: auto;
-  display: flex;
-  align-items: center;
-  border-radius: 8px;
 }
 
 .cards-img {
-  height: 200px;
-  width: 350px;
+  height: 140px;
+  width: 250px;
   /* width: auto; */
-  border-radius: 8px;
-  transition: all 1s;
+  transition: all 0.3s;
 }
 
-.card-container:hover {
+.card-container img:hover {
   transform: translate(0, -5px);
 }
