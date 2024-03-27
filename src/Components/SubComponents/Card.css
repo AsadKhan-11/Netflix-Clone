@@ -1,4 +1,9 @@
-img {
-  max-height: 100%;
-  width: 500px;
+.cards-img {
+  max-height: 250px;
+  max-width: 250px;
+}
+
+.cards-img:hover {
+  transform: scale(1.1);
+  transition: all 1s;
 }

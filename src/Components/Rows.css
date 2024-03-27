@@ -1,6 +1,8 @@
 .row-cards {
   display: flex;
-  height: 150px;
+  height: 300px;
+
+  max-width: 100%;
   gap: 20px;
   overflow-x: scroll;
 }

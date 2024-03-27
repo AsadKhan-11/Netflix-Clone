@@ -22,7 +22,11 @@ function Rows(props) {
 
       <div className="row-cards">
         {props.arr.map((items, index) => (
-          <Card key={index} img={`${imgURL}/${items.poster_path}`} />
+          <Card
+            key={index}
+            img={`${imgURL}/${items.poster_path}`}
+            title={items.title}
+          />
         ))}
       </div>
     </>

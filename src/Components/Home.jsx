@@ -5,28 +5,51 @@ import Rows from "./Rows";
 import { useState } from "react";
 
 function Home() {
-  const [movies, setMovies] = useState([]);
+  const [topMovies, setTopMovies] = useState([]);
+  const [nowPlaying, setNowPlaying] = useState([]);
+  const [popular, setPopular] = useState([]);
+  const [upcoming, setUpcoming] = useState([]);
+  const imgURL = "https://image.tmdb.org/t/p/original";
 
   useEffect(() => {
-    const data = async () => {
-      const url = import.meta.env.REACT_APP_URL;
-      const api = import.meta.env.REACT_APP_API;
+    const url = import.meta.env.REACT_APP_URL;
+    const api = import.meta.env.REACT_APP_API;
+    const fetchShows = async () => {
+      const response = await axios.get(`${url}/top_rated?api_key=${api}`);
 
+      setTopMovies(response.data.results);
+    };
+
+    const fetchPopular = async () => {
+      const response = await axios.get(`${url}/popular?api_key=${api}`);
+
+      setPopular(response.data.results);
+    };
+
+    const fetchPlaying = async () => {
       const response = await axios.get(`${url}/now_playing?api_key=${api}`);
 
-      setMovies(response.data.results);
-      console.log(response.data.results);
+      setNowPlaying(response.data.results);
     };
-    data();
+
+    const fetchUpcoming = async () => {
+      const response = await axios.get(`${url}/upcoming?api_key=${api}`);
+
+      setUpcoming(response.data.results);
+    };
+    fetchShows();
+    fetchPopular();
+    fetchPlaying();
+    fetchUpcoming();
   }, []);
   return (
     <>
       <section className="home">
-        <div className="img"></div>
-
-        <Rows title="TV Shows" arr={movies} />
-        {/* <Rows title="Movies" arr={movies} />
-        <Rows title="My List" arr={movies} /> */}
+        <img className="home-img" src={`${imgURL}/${popular[0].poster_path}`} />
+        <Rows title="Popular on Netflix" arr={popular} />
+        <Rows title="TV Shows" arr={topMovies} />
+        <Rows title="Now Playing" arr={nowPlaying} />
+        <Rows title="Upcoming" arr={upcoming} />
       </section>
     </>
   );
