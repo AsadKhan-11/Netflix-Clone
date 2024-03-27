@@ -1,9 +1,19 @@
-.cards-img {
-  max-height: 250px;
-  max-width: 250px;
+.card-container {
+  height: 250px;
+  width: auto;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
 }
 
-.cards-img:hover {
-  transform: scale(1.1);
+.cards-img {
+  height: 200px;
+  width: 350px;
+  /* width: auto; */
+  border-radius: 8px;
   transition: all 1s;
+}
+
+.card-container:hover {
+  transform: translate(0, -5px);
 }
