@@ -1,6 +1,6 @@
 .row-cards {
   display: flex;
-  height: 220px;
+  height: 320px;
   width: 100vw;
   gap: 5px;
   align-items: end;
@@ -11,13 +11,12 @@
 
 .rows-title {
   color: white;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 22px;
+  font-size: 24px;
 }
 
 .rows-section {
   padding-left: 50px;
-  margin-bottom: 55px;
+  margin-bottom: 35px;
 }
 
 ::-webkit-scrollbar {
@@ -51,11 +50,11 @@
 
 /* Handle */
 .row-cards::-webkit-scrollbar-thumb {
-  background: #0f0f0f;
+  background: #888;
   border-radius: 15px;
 }
 
 /* Handle on hover */
 .row-cards::-webkit-scrollbar-thumb:hover {
-  background: #2c2c2c;
+  background: #555;
 }

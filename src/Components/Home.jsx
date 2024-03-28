@@ -10,6 +10,7 @@ function Home() {
   const [popular, setPopular] = useState([]);
   const [upcoming, setUpcoming] = useState([]);
   const imgURL = "https://image.tmdb.org/t/p/original";
+  const [number, setNumber] = useState(2);
 
   useEffect(() => {
     const url = import.meta.env.REACT_APP_URL;
@@ -18,6 +19,7 @@ function Home() {
       const response = await axios.get(`${url}/top_rated?api_key=${api}`);
 
       setTopMovies(response.data.results);
+      console.log(response.data.results);
     };
 
     const fetchPopular = async () => {
@@ -45,7 +47,23 @@ function Home() {
   return (
     <>
       <section className="home">
-        <img className="home-img" src={`${imgURL}/${popular[3].poster_path}`} />
+        <div className="home-banner">
+          {" "}
+          <img
+            className="home-img"
+            src={`${imgURL}/${popular[number].poster_path}`}
+          />
+          <div className="home-details">
+            {popular[3].original_title && (
+              <h1 className="title home-txt">
+                {popular[number].original_title}
+              </h1>
+            )}
+            {popular[3].overview && (
+              <p className="overview home-txt">{popular[number].overview}</p>
+            )}
+          </div>
+        </div>
 
         <div className="rows-container">
           <Rows title="Popular on Netflix" arr={popular} />
