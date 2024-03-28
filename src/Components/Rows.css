@@ -1,10 +1,11 @@
 .row-cards {
   display: flex;
-  height: 200px;
+  height: 220px;
   width: 100vw;
-  gap: 20px;
+  gap: 5px;
   align-items: end;
   overflow-x: scroll;
+  scroll-behavior: smooth;
   z-index: 4;
 }
 
@@ -17,4 +18,44 @@
 .rows-section {
   padding-left: 50px;
   margin-bottom: 55px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.row-cards::-webkit-scrollbar {
+  height: 5px;
+}
+
+/* Track */
+.row-cards::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 15px;
+}
+
+/* Handle */
+.row-cards::-webkit-scrollbar-thumb {
+  background: #0f0f0f;
+  border-radius: 15px;
+}
+
+/* Handle on hover */
+.row-cards::-webkit-scrollbar-thumb:hover {
+  background: #2c2c2c;
 }
