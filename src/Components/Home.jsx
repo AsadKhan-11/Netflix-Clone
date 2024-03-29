@@ -19,7 +19,6 @@ function Home() {
       const response = await axios.get(`${url}/top_rated?api_key=${api}`);
 
       setTopMovies(response.data.results);
-      console.log(response.data.results);
     };
 
     const fetchPopular = async () => {
@@ -62,6 +61,10 @@ function Home() {
             {popular[3].overview && (
               <p className="overview home-txt">{popular[number].overview}</p>
             )}
+            <div className="btns-container">
+              <button className="btns">Play</button>
+              <button className="btns btn2">+ My List</button>
+            </div>
           </div>
         </div>
 
