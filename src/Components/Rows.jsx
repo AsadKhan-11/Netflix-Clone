@@ -18,7 +18,7 @@ function Rows(props) {
 
   return (
     <>
-      <section className="rows-section">
+      <section className="rows-section" id={props.id}>
         <h1 className="rows-title">{props.title}</h1>
 
         <div className="row-cards">

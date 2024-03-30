@@ -3,6 +3,7 @@ import "./Home.css";
 import axios from "axios";
 import Rows from "./Rows";
 import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function Home() {
   const [topMovies, setTopMovies] = useState([]);
@@ -10,7 +11,7 @@ function Home() {
   const [popular, setPopular] = useState([]);
   const [upcoming, setUpcoming] = useState([]);
   const imgURL = "https://image.tmdb.org/t/p/original";
-  const [number, setNumber] = useState(2);
+  const [number, setNumber] = useState(1);
 
   useEffect(() => {
     const url = import.meta.env.REACT_APP_URL;
@@ -45,7 +46,7 @@ function Home() {
   }, []);
   return (
     <>
-      <section className="home">
+      <section className="home" id="home">
         <div className="home-banner">
           {" "}
           <img
@@ -69,10 +70,11 @@ function Home() {
         </div>
 
         <div className="rows-container">
-          <Rows title="Popular on Netflix" arr={popular} />
-          <Rows title="TV Shows" arr={topMovies} />
-          <Rows title="Now Playing" arr={nowPlaying} />
-          <Rows title="Upcoming" arr={upcoming} />
+          <Rows id="popular" title="Popular on Netflix" arr={popular} />
+
+          <Rows id="topShows" title="TV Shows" arr={topMovies} />
+          <Rows id="nowPlaying" title="Now Playing" arr={nowPlaying} />
+          <Rows id="upcoming" title="My List" arr={upcoming} />
         </div>
       </section>
     </>

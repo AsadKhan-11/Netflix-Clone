@@ -2,20 +2,25 @@
   display: flex;
   align-items: center;
   background-color: transparent;
-  position: absolute;
+  position: fixed;
+  top: 0;
   gap: 40px;
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 700;
   padding-left: 50px;
   height: 80px;
   z-index: 1;
+  width: 100%;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
   gap: 30px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
 }
 
 .netflix-logo {

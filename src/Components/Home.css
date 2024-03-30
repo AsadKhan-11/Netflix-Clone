@@ -54,12 +54,17 @@
   font-size: 18px;
   border: none;
   cursor: pointer;
+  transition: all 1s;
 }
 
 .btns:hover {
-  background-color: rgb(49, 49, 49);
+  background-color: grey;
 }
 .btn2 {
   background-color: rgb(24, 24, 24);
   color: white;
+}
+
+.btn2:hover {
+  background-color: rgb(49, 49, 49);
 }
